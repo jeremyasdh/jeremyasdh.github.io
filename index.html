@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金山逍遥-经典单机游戏下载与怀旧攻略平台</title>
+    <meta name="description" content="金山逍遥专注于提供经典国产单机游戏下载、怀旧游戏合集及详细通关攻略。汇集《剑侠情缘》、《封神榜》等经典作品，打造玩家专属的绿色游戏家园。">
+    <meta name="keywords" content="金山逍遥,经典单机游戏下载,国产怀旧游戏,剑侠情缘,封神榜,金山游戏攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* 经典的武侠红 */
+            --secondary-color: #f57f17; /* 金山黄/古铜色 */
+            --bg-dark: #1a1a1a;
+            --bg-card: #252525;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* 首屏 Hero */
+        .hero {
+            background: linear-gradient(135deg, #2c0000 0%, #4a0000 100%);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* 通用板块 */
+        section {
+            padding: 50px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .section-more {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* 热门游戏 Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            flex: 1;
+            padding: 8px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* 攻略中心 */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 20px;
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            align-items: center;
+        }
+
+        .guide-thumb {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .guide-info {
+            flex: 1;
+        }
+
+        .guide-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .guide-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .guide-date {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+        }
+
+        .hot-list a {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hot-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 环保下载 */
+        .download-section {
+            background-color: #2a2a2a;
+            text-align: center;
+        }
+
+        .download-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .dl-box {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            width: 300px;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .dl-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .dl-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .dl-box p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #111;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                金山逍遥
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">游戏库</a></li>
+                    <li><a href="#">攻略专区</a></li>
+                    <li><a href="#">怀旧论坛</a></li>
+                    <li><a href="#">下载中心</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>重温经典，逍遥江湖</h1>
+                <p>汇聚金山软件旗下经典单机大作，提供最新版本下载、补丁更新及全流程图文攻略。让情怀回归，让经典永存。</p>
+                <div>
+                    <a href="#games" class="btn">开始游戏</a>
+                    <a href="#guide" class="btn btn-secondary">浏览攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门游戏推荐 -->
+        <section id="games" class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门经典</h2>
+                <a href="#" class="section-more">查看全部 &gt;</a>
+            </div>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/jxj/400/250" alt="剑侠情缘网络版" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">剑侠情缘网络版</h3>
+                        <div class="card-meta">
+                            <span class="tag">角色扮演</span>
+                            <span>2003</span>
+                        </div>
+                        <p class="card-desc">国产武侠网游的巅峰之作，重温那个热血沸腾的江湖岁月，体验极致的武侠情怀。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">查看攻略</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 2 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/fengshen/400/250" alt="封神榜" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">封神榜</h3>
+                        <div class="card-meta">
+                            <span class="tag">动作</span>
+                            <span>2002</span>
+                        </div>
+                        <p class="card-desc">基于中国古典名著改编的动作游戏，操作流畅，打击感十足，还原经典神话故事。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">查看攻略</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 3 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia/400/250" alt="剑侠情缘2" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">剑侠情缘网络版II</h3>
+                        <div class="card-meta">
+                            <span class="tag">MMORPG</span>
+                            <span>2006</span>
+                        </div>
+                        <p class="card-desc">延续一代的精彩，优化了画面与操作，引入了更多职业与玩法，探索更广阔的武林。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">查看攻略</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 4 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/kingdom/400/250" alt="傲世群英传" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">傲世群英传</h3>
+                        <div class="card-meta">
+                            <span class="tag">策略</span>
+                            <span>2005</span>
+                        </div>
+                        <p class="card-desc">宏大的战争场面，丰富的兵种搭配，重温三国乱世，运筹帷幄之中决胜千里之外。</p>
+                        <div class="card-actions">
+                            <button class="btn btn-sm">立即下载</button>
+                            <button class="btn btn-sm btn-secondary">查看攻略</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 攻略中心 -->
+        <section id="guide" class="container" style="background-color: #222; border-radius: 8px; padding: 40px;">
+            <div class="section-header">
+                <h2 class="section-title">攻略专区</h2>
+                <a href="#" class="section-more">更多攻略 &gt;</a>
+            </div>
+            <div class="guide-layout">
+                <div class="guide-main">
+                    <div class="guide-list">
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/guide1/150/100" alt="攻略封面" class="guide-thumb">
+                            <div class="guide-info">
+                                <h3><a href="#">剑侠情缘：全职业加点与PK技巧详解</a></h3>
+                                <p>针对不同职业的特性，提供最优加点方案及PVP实战技巧，助你称霸江湖。</p>
+                                <span class="guide-date">发布于：2023-10-24 | 分类：新手指南</span>
+                            </div>
+                        </article>
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/guide2/150/100" alt="攻略封面" class="guide-thumb">
+                            <div class="guide-info">
+                                <h3><a href="#">封神榜：隐藏BOSS位置与通关秘籍</a></h3>
+                                <p>揭秘游戏中所有隐藏BOSS的刷新位置，并提供通关秘籍，轻松挑战高难度副本。</p>
+                                <span class="guide-date">发布于：2023-10-20 | 分类：Boss攻略</span>
+                            </div>
+                        </article>
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/guide3/150/100" alt="攻略封面" class="guide-thumb">
+                            <div class="guide-info">
+                                <h3><a href="#">傲世群英传：兵种克制关系图鉴</a></h3>
+                                <p>深入分析各类兵种之间的克制关系，教你如何布阵才能以少胜多。</p>
+                                <span class="guide-date">发布于：2023-10-15 | 分类：策略分析</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <aside class="guide-sidebar">
+                    <div class="sidebar-box">
+                        <h3>热门攻略</h3>
+                        <ul class="hot-list">
+                            <li><a href="#">[图文] 新手入门必读十大常识</a> <span>1.2w</span></li>
+                            <li><a href="#">[视频] 剑侠情缘30级副本速通</a> <span>8.5k</span></li>
+                            <li><a href="#">[问答] 游戏无法启动怎么办？</a> <span>6.2k</span></li>
+                            <li><a href="#">[新闻] 2024年怀旧服版本更新公告</a> <span>4.1k</span></li>
+                            <li><a href="#">[心得] 单刷BOSS的装备推荐</a> <span>3.8k</span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 安全下载 -->
+        <section class="download-section">
+            <div class="container">
+                <h2 class="section-title">安全下载</h2>
+                <p style="color: #aaa; margin-top: 10px;">所有游戏资源均经过安全检测，无毒无广告，请放心下载</p>
+                <div class="download-cards">
+                    <div class="dl-box">
+                        <div class="dl-icon">🛡️</div>
+                        <h3>安全检测</h3>
+                        <p>每款游戏上线前均进行360、腾讯等权威安全软件扫描，确保纯净无毒。</p>
+                        <button class="btn btn-sm" style="width:100%">查看检测报告</button>
+                    </div>
+                    <div class="dl-box">
+                        <div class="dl-icon">🚀</div>
+                        <h3>高速下载</h3>
+                        <p>多节点CDN加速，提供高速直链下载服务，告别卡顿，畅快游戏。</p>
+                        <button class="btn btn-sm" style="width:100%">切换下载源</button>
+                    </div>
+                    <div class="dl-box">
+                        <div class="dl-icon">💾</div>
+                        <h3>官方备份</h3>
+                        <p>提供原版安装包及历史版本回档服务，满足不同玩家的怀旧需求。</p>
+                        <button class="btn btn-sm" style="width:100%">历史版本</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于金山逍遥</h4>
+                    <p style="color: #777; font-size: 14px; line-height: 1.8;">
+                        金山逍遥致力于为玩家提供最纯净、最经典的国产单机游戏资源。我们传承金山软件的游戏精神，重现那个年代的快乐与感动。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">游戏库</a></li>
+                        <li><a href="#">新手攻略</a></li>
+                        <li><a href="#">版本更新</a></li>
+                        <li><a href="#">玩家论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">账号注册</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">QQ玩家群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 金山逍遥 版权所有. 本站资源仅供学习交流使用，请于下载后24小时内删除。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
