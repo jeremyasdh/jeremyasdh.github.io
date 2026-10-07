@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="高档茶叶选购指南，涵盖顶级绿茶、红茶、普洱、乌龙茶等名品鉴赏、冲泡技巧与品鉴知识，提供高端茶叶品牌推荐与产地溯源服务。">
+    <meta name="keywords" content="高档茶叶,茶叶品鉴,高端茶叶品牌,普洱茶,龙井茶,大红袍,茶叶冲泡">
+    <title>高档茶叶-顶级名茶鉴赏与品鉴指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c4a3a;
+            --accent-color: #8c4b32;
+            --bg-color: #f9f7f4;
+            --card-bg: #ffffff;
+            --text-main: #2d2d2d;
+            --text-secondary: #666666;
+            --border-color: #e5e5e5;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a3b2b;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/tea-hero/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .intro-highlight {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .intro-image img {
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .cat-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .cat-card:hover .cat-img img {
+            transform: scale(1.05);
+        }
+
+        .cat-info {
+            padding: 25px;
+        }
+
+        .cat-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .cat-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .cat-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .cat-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .cat-card:hover .cat-link::after {
+            margin-left: 10px;
+        }
+
+        /* Featured Products */
+        .featured {
+            padding: 80px 0;
+            background-color: #f2efe9;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-img {
+            height: 250px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #999;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 80px 0;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .guide-sidebar h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+        }
+
+        .guide-list a {
+            display: block;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .guide-list a:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            padding-left: 20px;
+        }
+
+        .guide-content article {
+            margin-bottom: 40px;
+        }
+
+        .guide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-content h4 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+            color: var(--text-main);
+        }
+
+        .guide-content p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #dcdcdc;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            opacity: 0.7;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .intro-grid, .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .intro-image {
+                order: -1;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">茗<span>尚</span> · 高档茶叶</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#categories">名茶分类</a></li>
+                    <li><a href="#featured">精选品鉴</a></li>
+                    <li><a href="#guide">冲泡指南</a></li>
+                    <li><a href="#about">品牌故事</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">联系顾问</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>品味自然之韵，尊享高端茗茶</h1>
+                <p>汇聚中国十大名茶精华，从西湖龙井到武夷大红袍，为您甄选每一片来自高海拔茶园的臻品。</p>
+                <a href="#featured" class="btn btn-primary">浏览精选茶品</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro">
+            <div class="container intro-grid">
+                <div class="intro-text">
+                    <h2>何为高档茶叶？</h2>
+                    <p>高档茶叶并非简单的价格标签，而是对原料产地、采摘标准、制作工艺及仓储条件的综合考量。它代表了中国茶文化的巅峰，每一口都是对自然的敬畏。</p>
+                    <p>我们专注于为茶友提供源头直供的优质茶叶，拒绝中间环节，确保每一份送到您手中的茶叶都保持着最佳的鲜活度与香气。</p>
+                    <div class="intro-highlight">
+                        <div class="highlight-item">
+                            <h3>100%</h3>
+                            <p>原产地直采</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h3>30+</h3>
+                            <p>年制茶经验</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h3>5年</h3>
+                            <p>陈化仓储</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="https://picsum.photos/seed/tea-leaf-detail/600/400.jpg" alt="高档茶叶特写">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>名茶分类鉴赏</h2>
+                    <p>中国地大物博，不同地域孕育了风格迥异的高档茶品。</p>
+                </div>
+                <div class="cat-grid">
+                    <article class="cat-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/tea-green/400/300.jpg" alt="绿茶">
+                        </div>
+                        <div class="cat-info">
+                            <h3>绿茶</h3>
+                            <p>不发酵茶，保留鲜叶天然物质。代表名品：西湖龙井、碧螺春、黄山毛峰。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="cat-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/tea-red/400/300.jpg" alt="红茶">
+                        </div>
+                        <div class="cat-info">
+                            <h3>红茶</h3>
+                            <p>全发酵茶，汤色红艳，香气浓郁。代表名品：正山小种、祁门红茶、金骏眉。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="cat-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/tea-oolong/400/300.jpg" alt="乌龙茶">
+                        </div>
+                        <div class="cat-info">
+                            <h3>乌龙茶</h3>
+                            <p>半发酵茶，兼具绿茶清香与红茶醇厚。代表名品：武夷大红袍、铁观音、凤凰单丛。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="cat-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/tea-puer/400/300.jpg" alt="普洱茶">
+                        </div>
+                        <div class="cat-info">
+                            <h3>普洱茶</h3>
+                            <p>后发酵茶，越陈越香。代表名品：云南普洱熟茶、生茶、老班章。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="featured" class="featured">
+            <div class="container">
+                <div class="section-header">
+                    <h2>臻品推荐</h2>
+                    <p>本季甄选，每一款都是茶桌上的焦点。</p>
+                </div>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-img">
+                            <span class="badge">热销</span>
+                            <img src="https://picsum.photos/seed/tea1/400/300.jpg" alt="西湖龙井明前茶">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">西湖龙井·明前精品</h3>
+                            <div class="product-meta">
+                                <span>浙江杭州</span>
+                                <span>特级</span>
+                            </div>
+                            <p class="product-desc">产自西湖核心产区，谷雨前采摘，色泽嫩绿，滋味鲜爽甘醇，带有独特的兰花香。</p>
+                            <div class="product-footer">
+                                <div class="price"><small>¥</small>3,680</div>
+                                <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.85rem;">加入清单</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-img">
+                            <span class="badge">新品</span>
+                            <img src="https://picsum.photos/seed/tea2/400/300.jpg" alt="武夷大红袍">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">武夷山大红袍母树</h3>
+                            <div class="product-meta">
+                                <span>福建武夷山</span>
+                                <span>纯料</span>
+                            </div>
+                            <p class="product-desc">岩骨花香，韵味悠长。传统炭焙工艺，汤色橙黄明亮，叶底软亮红匀。</p>
+                            <div class="product-footer">
+                                <div class="price"><small>¥</small>8,800</div>
+                                <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.85rem;">加入清单</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-img">
+                            <img src="https://picsum.photos/seed/tea3/400/300.jpg" alt="云南普洱茶饼">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">古树普洱·7542</h3>
+                            <div class="product-meta">
+                                <span>云南西双版纳</span>
+                                <span>熟茶</span>
+                            </div>
+                            <p class="product-desc">选用百年古树原料，经过渥堆发酵，汤色红浓透亮，陈香显著，暖胃养胃。</p>
+                            <div class="product-footer">
+                                <div class="price"><small>¥</small>1,280</div>
+                                <button class="btn btn-outline" style="padding: 5px 15px; font-size: 0.85rem;">加入清单</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container guide-container">
+                <aside class="guide-sidebar">
+                    <h3>品鉴指南</h3>
+                    <ul class="guide-list">
+                        <li><a href="#how-to-choose">如何选购高档茶</a></li>
+                        <li><a href="#how-to-brew">高档茶冲泡技巧</a></li>
+                        <li><a href="#storage">茶叶科学储存方法</a></li>
+                        <li><a href="#pairing">茶点搭配建议</a></li>
+                        <li><a href="#faq">常见问题解答</a></li>
+                    </ul>
+                </aside>
+                <div class="guide-content">
+                    <article id="how-to-choose">
+                        <h3>如何选购高档茶叶？</h3>
+                        <p>选购高档茶叶时，需重点关注“色、香、形、味”四要素。首先观其色，高档绿茶色泽嫩绿或翠绿有光泽，红茶乌润；其次闻其香，香气纯正持久，无异味；再次看其形，条索紧结重实，匀整度高；最后品其味，口感醇厚回甘，生津持久。</p>
+                    </article>
+                    <article id="how-to-brew">
+                        <h3>高档茶的冲泡技巧</h3>
+                        <h4>1. 选具</h4>
+                        <p>冲泡高档茶建议使用透明玻璃杯（冲泡绿茶）或白瓷盖碗（冲泡乌龙、红茶），以更好地观赏茶汤色泽与茶叶舞动。</p>
+                        <h4>2. 水温</h4>
+                        <p>水温是关键。绿茶水温控制在80℃左右，不宜用沸水以免烫伤嫩叶；红茶和乌龙茶则需沸水冲泡，激发香气。</p>
+                        <h4>3. 时间</h4>
+                        <p>冲泡时间根据茶类灵活掌握。绿茶首泡约30秒至1分钟，后续逐次延长；乌龙茶可进行“洗茶”、“润茶”，正式冲泡时间较长。</p>
+                    </article>
+                    <article id="storage">
+                        <h3>高档茶叶的储存</h3>
+                        <p>高档茶叶易吸湿吸味，储存环境需保持干燥、避光、密封、无异味。建议使用紫砂罐、铁罐或锡罐储存，并置于阴凉处。普洱茶等后发酵茶可适当通风，但需防尘。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>茗尚 · 高档茶叶</h2>
+                    <p>致力于传承中国茶文化，为全球茶友提供最正宗、最优质的茶叶体验。每一片叶子都承载着山川的灵气。</p>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">
+                        <p>电话: 400-888-6666</p>
+                        <p>邮箱: service@mingshang-tea.com</p>
+                        <p>地址: 中国·杭州·西湖区龙井路1号</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>产品分类</h4>
+                    <ul>
+                        <li><a href="#">西湖龙井</a></li>
+                        <li><a href="#">安溪铁观音</a></li>
+                        <li><a href="#">武夷岩茶</a></li>
+                        <li><a href="#">云南普洱</a></li>
+                        <li><a href="#">祁门红茶</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">茶园直采</a></li>
+                        <li><a href="#">品鉴活动</a></li>
+                        <li><a href="#">加盟合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h4>订阅茗讯</h4>
+                    <p style="margin-bottom: 10px; font-size: 0.9rem;">获取最新茶叶资讯与优惠信息。</p>
+                    <form onsubmit="event.preventDefault(); alert('感谢您的订阅！');">
+                        <input type="email" placeholder="输入您的邮箱" required>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 茗尚高档茶叶有限公司 版权所有 | 仅供展示用途</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
